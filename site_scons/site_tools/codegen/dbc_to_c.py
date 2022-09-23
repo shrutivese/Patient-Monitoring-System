@@ -17,7 +17,7 @@ import os
 import sys
 
 from code_writer import CodeWriter, GENERATE_ALL_NODE_NAME, InvalidDBCNodeError
-from colour import ColorString
+from color import ColorString
 
 
 def get_args():
