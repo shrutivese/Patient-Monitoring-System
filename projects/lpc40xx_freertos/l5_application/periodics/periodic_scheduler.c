@@ -1,6 +1,7 @@
 #include "periodic_callbacks.h"
 
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -59,6 +60,10 @@ static void periodic_scheduler__check_flag(periodic_scheduler_s *periodic_task, 
     if (periodic_task->task_finished_flag) {
       periodic_task->task_finished_flag = false;
     } else {
+
+      fprintf(stderr, "periodic_callbacks__%dHz exceeded the tick limit.\nThe board is resetting.",
+              (1000 / periodic_task->task_delay_in_ticks));
+      vTaskDelay(3 * 1000);
       NVIC_SystemReset();
     }
   }
