@@ -1,3 +1,33 @@
+# Patient Monitoring System built on top of POSIX SJ2-c (https://gitlab.com/sjtwo-c-dev/sjtwo-c)
+We have simulated a patient monitoring system using FreeRTOS. It includes task functions for monitoring patient data such as heart rate, blood pressure, and SpO2, distributing tasks among caretakers, nurses, and doctors based on predefined thresholds and random decision-making. Queues are utilized for inter-task communication. The main function initializes queues and tasks, specifying their parameters and priorities, before starting the FreeRTOS scheduler. The system reads patient data from files, sends messages to task queues based on thresholds, and simulates task distribution among healthcare professionals namely: Caretaker unit, Nursing unit (with 4 nurses), doctor unit (with 2 on-call doctors) and one on-demand doctor. 
+
+Task Priority used:
+Priority of HeartRate: 1
+Priority of SPO2 concentration: 2
+Priority of Blood Pressure: 3
+Priority of Caretaker : 4
+Priority of Nurse: 5
+Priority of Doctor: 6
+Priority of on demand doctor: 7
+
+Delay for each Healthcare unit:
+Delay of Caretaker queue(taskqueue): 1000ms
+Delay of Nurses queue: 2000ms
+Delay of Doctor queue: 3000ms
+Delay of on call doctor: 3000ms
+
+# Demo
+https://github.com/user-attachments/assets/b38df903-b33f-4730-acbc-53563af4ad7b
+
+# Flowchart
+![sys_PMS](https://github.com/user-attachments/assets/f25ffa98-162f-48e7-9701-2dd4fe4d6336)
+
+# System Overview
+
+![PMS_SYS_OVER](https://github.com/user-attachments/assets/e4cf0b8b-4447-4134-9dda-932640373779)
+
+
+----From the sjtwo-c repo -----
 # SJ2-C Development Environment
 
 An `SJ2` board is used at San Jose State University (SJSU) to teach Embedded Systems' courses. Part of this Git repository also includes development environment for not just an ARM controller, but also support to compile and test software on your host machine such as Windows, Mac etc.
