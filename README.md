@@ -15,7 +15,10 @@ Delay of Caretaker queue(taskqueue): 1000ms
 Delay of Nurses queue: 2000ms
 Delay of Doctor queue: 3000ms
 Delay of on call doctor: 3000ms
-
+# Code
+Find the code under projects/x86_freertos/main.c
+Run the project on a linux system.
+Replace the files for SPO2,BP,heartrate with own files and change path in main.c 
 # Demo
 https://github.com/user-attachments/assets/b38df903-b33f-4730-acbc-53563af4ad7b
 
